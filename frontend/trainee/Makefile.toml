@@ -1,0 +1,17 @@
+# ----- Build -----
+
+[tasks.build]
+description = "Build with wasm-pack"
+command = "wasm-pack"
+args = ["build", "--target", "web", "--out-name", "wasm", "--out-dir", "./static"]
+
+# ----- Serve -----
+
+[tasks.serve]
+description = "Serve with miniserve"
+command = "miniserve"
+args = ["./static", "--index", "index.html"]
+
+[tasks.run]
+description = "Build and serve"
+dependencies = ["build", "serve"]
