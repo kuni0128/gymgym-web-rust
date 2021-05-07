@@ -1,0 +1,5 @@
+# develop environments
+/.idea
+
+# yew
+/frontend/trainee/target
