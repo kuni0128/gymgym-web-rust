@@ -1,4 +1,4 @@
-use yew::{ComponentLink, Component, ShouldRender, Html, html};
+use yew::{html, Component, ComponentLink, Html, ShouldRender};
 
 pub struct App {
     link: ComponentLink<Self>,
@@ -14,15 +14,12 @@ impl Component for App {
     type Properties = ();
 
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
-        Self {
-            link,
-            value: 0
-        }
+        Self { link, value: 0 }
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::AddOne => self.value += 1
+            Msg::AddOne => self.value += 1,
         }
         true
     }
