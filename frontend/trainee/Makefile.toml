@@ -16,3 +16,17 @@ args = ["./static", "--index", "index.html"]
 [tasks.run]
 description = "Build and serve"
 dependencies = ["build", "serve"]
+
+# ----- Linter -----
+
+[tasks.lint]
+description = "Lint with clippy"
+install_crate = { rustup_component_name = "clippy", binary = "cargo-clippy", test_arg = "--help" }
+command = "cargo"
+args = ["clippy", "--all-features", "--", "--deny", "warnings", "--deny", "clippy::pedantic", "--deny", "clippy::nursery"]
+
+[tasks.fmt]
+description = "Format with rustfmt"
+install_crate = { rustup_component_name = "rustfmt", binary = "rustfmt", test_arg = "-V" }
+command = "cargo"
+args = ["fmt"]
