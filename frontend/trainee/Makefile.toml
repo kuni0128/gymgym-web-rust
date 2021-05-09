@@ -3,6 +3,7 @@
 [tasks.build]
 description = "Build with wasm-pack"
 command = "wasm-pack"
+watch = true
 args = ["build", "--target", "web", "--out-name", "wasm", "--out-dir", "./static"]
 
 # ----- Serve -----
