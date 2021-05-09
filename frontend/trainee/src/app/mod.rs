@@ -1,4 +1,7 @@
+mod components;
+
 use yew::{html, Component, ComponentLink, Html, ShouldRender};
+use crate::app::components::{header::Header};
 
 pub struct App {
     link: ComponentLink<Self>,
@@ -31,6 +34,7 @@ impl Component for App {
     fn view(&self) -> Html {
         html! {
             <div>
+                <Header />
                 <button onclick=self.link.callback(|_| Msg::AddOne)>{ "+1" }</button>
                 <p>{ self.value }</p>
             </div>
